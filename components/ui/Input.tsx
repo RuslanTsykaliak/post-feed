@@ -10,11 +10,12 @@ const Input = ({
   return (
     <>
       <input
-        className="w-full p-2 border-gray-200 border"
+        className="w-full p-4 text-lg border-gray-200 border"
         name={name}
         type={type}
         value={value}
         placeholder={placeholder}
+        maxLength={500} // Limit input to 500 characters
       />
     </>
   )

@@ -4,6 +4,23 @@ import { revalidatePath } from "next/cache"
 
 import prisma from "./prismadb"
 
+
+export async function getData() {
+  const data = await prisma.post.findMany({
+    select: {
+      description: true,
+      id: true,
+      user: true,
+      createdAt: true,
+    },
+    orderBy: {
+      createdAt: 'desc',
+    }
+  })
+
+  return data
+}
+
 export async function create(formData: FormData) {
   const input = formData.get('input') as string
 

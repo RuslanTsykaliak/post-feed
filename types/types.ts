@@ -20,4 +20,3 @@ export type TButton = {
   onClick?: () => void;
   actionButton?: boolean;
 }
-
